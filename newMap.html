@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+  xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd"
+  xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <NamedLayer>
+    <Name>grid</Name>
+    <UserStyle>
+      <Title>A teal line style</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Title>teal line</Title>
+          <LineSymbolizer>
+            <Stroke>
+              <CssParameter name="stroke">#00cc33</CssParameter>
+            </Stroke>
+          </LineSymbolizer>
+          <TextSymbolizer>
+			<Geometry>
+              <ogc:Function name="endPoint">
+              <ogc:Function name="intersection">
+                 <ogc:PropertyName>the_geom</ogc:PropertyName>
+                <ogc:Function name="env">
+                  <ogc:Literal>wms_bbox</ogc:Literal>
+                </ogc:Function>
+               
+              </ogc:Function>
+                </ogc:Function>
+            </Geometry>
+            <Label>
+               <ogc:Function name="endPoint">
+             <ogc:Function name="intersection">
+               <ogc:PropertyName>the_geom</ogc:PropertyName>
+                <ogc:Function name="env">
+                   
+                  <ogc:Literal>wms_bbox</ogc:Literal>
+                </ogc:Function>
+                
+              </ogc:Function>
+                 </ogc:Function>
+                 
+            </Label>
+            <LabelPlacement>
+           <PointPlacement>
+             <AnchorPoint>
+               <AnchorPointX>0.0</AnchorPointX>
+               <AnchorPointY>0.0</AnchorPointY>
+             </AnchorPoint>
+             <Displacement>
+               <DisplacementX>-120</DisplacementX>
+               <DisplacementY>40</DisplacementY>
+             </Displacement>
+             <Rotation>0</Rotation>
+           </PointPlacement>
+         </LabelPlacement>
+          </TextSymbolizer>
+          <TextSymbolizer>
+			<Geometry>
+              <ogc:Function name="startPoint">
+              <ogc:Function name="intersection">
+                 <ogc:PropertyName>the_geom</ogc:PropertyName>
+                <ogc:Function name="env">
+                  <ogc:Literal>wms_bbox</ogc:Literal>
+                </ogc:Function>
+               
+              </ogc:Function>
+                </ogc:Function>
+            </Geometry>
+            <Label>
+               <ogc:Function name="startPoint">
+             <ogc:Function name="intersection">
+               <ogc:PropertyName>the_geom</ogc:PropertyName>
+                <ogc:Function name="env">
+                   
+                  <ogc:Literal>wms_bbox</ogc:Literal>
+                </ogc:Function>
+                
+              </ogc:Function>
+                 </ogc:Function>
+                 
+            </Label>
+            <LabelPlacement>
+           <PointPlacement>
+             <AnchorPoint>
+               <AnchorPointX>0.0</AnchorPointX>
+               <AnchorPointY>0.0</AnchorPointY>
+             </AnchorPoint>
+             <Displacement>
+               <DisplacementX>0</DisplacementX>
+               <DisplacementY>-20</DisplacementY>
+             </Displacement>
+             <Rotation>0</Rotation>
+           </PointPlacement>
+         </LabelPlacement>
+          </TextSymbolizer>
+        </Rule>
+
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
